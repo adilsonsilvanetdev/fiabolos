@@ -1,0 +1,596 @@
+:root {
+  color-scheme: light;
+  --cor-fundo: #fbf9f6;
+  --cor-papel: #fffdfa;
+  --cor-texto: #35241d;
+  --cor-chocolate: #35170d;
+  --cor-destaque: #a86f72;
+  --cor-linha: #e9e2dc;
+  --sombra-card: 0 12px 34px rgba(53, 36, 29, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+
+body {
+  margin: 0;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.topo {
+  position: fixed;
+  z-index: 10;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 5.25rem;
+  padding: 0.65rem max(1.5rem, calc((100% - 1220px) / 2));
+  border-bottom: 1px solid rgba(255, 253, 250, 0.45);
+  background: rgba(255, 253, 250, 0.84);
+  box-shadow: 0 3px 20px rgba(53, 36, 29, 0.06);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--cor-chocolate);
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.marca img {
+  width: 7.3rem;
+  height: 7.3rem;
+  object-fit: cover;
+  border: 1px solid rgba(168, 111, 114, 0.32);
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(53, 36, 29, 0.1);
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.3rem, 3vw, 2.7rem);
+}
+
+.navegacao a {
+  position: relative;
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  padding-block: 0.4rem;
+  color: #59463c;
+  font-size: 0.9rem;
+  letter-spacing: 0.035em;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.navegacao a:hover,
+.navegacao a:focus-visible {
+  color: var(--cor-destaque);
+}
+
+.navegacao a:focus-visible,
+.link-pedido:focus-visible,
+.botao-pedido:focus-visible,
+.botao-menu:focus-visible,
+.filtro-produto:focus-visible,
+.botao:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 4px;
+}
+
+.botao-menu {
+  display: none;
+}
+
+.principal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 8rem max(2rem, calc((100% - 1220px) / 2)) 5rem;
+  overflow: hidden;
+  color: #fffdfa;
+  background-color: var(--cor-chocolate);
+  background-image:
+    linear-gradient(90deg, rgba(35, 18, 12, 0.78) 0%, rgba(35, 18, 12, 0.57) 38%, rgba(35, 18, 12, 0.12) 76%),
+    linear-gradient(0deg, rgba(35, 18, 12, 0.22), rgba(35, 18, 12, 0.04)),
+    url("Imagens/WhatsApp%20Image%202026-10-17%20at%2008.37.48.jpeg");
+  background-position: center, center, center 56%;
+  background-size: cover;
+}
+
+.principal h1,
+.produtos h2,
+.contato h2 {
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.principal h1 {
+  width: 100%;
+  max-width: 13ch;
+  margin: 0 0 1.25rem;
+  font-size: clamp(3.25rem, 7.4vw, 6.8rem);
+  line-height: 0.98;
+  text-wrap: balance;
+  text-shadow: 0 3px 22px rgba(22, 10, 5, 0.23);
+}
+
+.principal p {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0;
+  color: rgba(255, 253, 250, 0.92);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.75;
+  text-shadow: 0 2px 12px rgba(22, 10, 5, 0.35);
+}
+
+.produtos,
+.contato {
+  width: min(1220px, calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.produtos {
+  padding-block: clamp(5.5rem, 9vw, 8rem) clamp(4.5rem, 8vw, 7rem);
+}
+
+.produtos h2,
+.contato h2 {
+  margin: 0;
+  color: var(--cor-chocolate);
+  font-size: clamp(2.35rem, 4.4vw, 4rem);
+  line-height: 1.12;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.introducao-produtos {
+  max-width: 45rem;
+  margin: 1rem auto 3.2rem;
+  color: #77685e;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.filtros-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: -1.2rem auto 0.8rem;
+}
+
+.filtro-produto {
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--cor-linha);
+  border-radius: 999px;
+  color: #59463c;
+  background: var(--cor-papel);
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.filtro-produto:hover,
+.filtro-produto:focus-visible {
+  border-color: var(--cor-destaque);
+}
+
+.filtro-produto.ativo {
+  border-color: var(--cor-destaque);
+  color: #fffdfa;
+  background: var(--cor-destaque);
+}
+
+.filtro-produto:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.aviso-valores {
+  margin: 0 0 2rem;
+  color: #8a7c72;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.sem-produtos {
+  margin: 1.5rem auto 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--cor-linha);
+  border-radius: 0.65rem;
+  color: #77685e;
+  background: var(--cor-papel);
+  text-align: center;
+}
+
+.sem-produtos[hidden],
+.produto[hidden] {
+  display: none;
+}
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.2rem, 2.6vw, 2rem);
+}
+
+.produto {
+  overflow: hidden;
+  border: 1px solid rgba(83, 56, 43, 0.08);
+  border-radius: 0.85rem;
+  background: var(--cor-papel);
+  box-shadow: var(--sombra-card);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(53, 36, 29, 0.12);
+}
+
+.produto > img {
+  display: block;
+  width: 100%;
+  height: clamp(17rem, 27vw, 22rem);
+  object-fit: cover;
+  object-position: center;
+  background: #eee8e2;
+  transition: transform 400ms ease;
+}
+
+.produto:hover > img {
+  transform: scale(1.025);
+}
+
+.produto-conteudo {
+  padding: 1.5rem 1.55rem 1.7rem;
+}
+
+.produto h3 {
+  margin: 0 0 0.55rem;
+  color: var(--cor-chocolate);
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.produto p {
+  min-height: 3.4em;
+  margin: 0 0 1.1rem;
+  color: #77685e;
+  font-size: 0.95rem;
+}
+
+.produto .preco-produto {
+  min-height: 0;
+  margin: 0.15rem 0 0.6rem;
+  color: var(--cor-chocolate);
+  font-size: 1.16rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.link-pedido {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.45rem;
+  padding-block: 0.35rem;
+  color: var(--cor-destaque);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link-pedido::after {
+  content: "↗";
+  font-size: 1rem;
+  transition: transform 180ms ease;
+}
+
+.link-pedido:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.link-pedido:hover::after {
+  transform: translate(2px, -2px);
+}
+
+.botao-pedido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  margin-top: 1rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 0.45rem;
+  color: #fffdfa;
+  background: var(--cor-destaque);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.botao-pedido:hover {
+  transform: translateY(-2px);
+  border-color: #925b60;
+  background: #925b60;
+}
+
+.contato {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
+  color: #fffdfa;
+  background: var(--cor-chocolate);
+  text-align: center;
+}
+
+.contato h2 {
+  color: #fffdfa;
+}
+
+.contato p {
+  max-width: 42rem;
+  margin: 1rem auto 1.8rem;
+  color: rgba(255, 253, 250, 0.8);
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  padding: 0.75rem 1.3rem;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 0.45rem;
+  color: #fffdfa;
+  background: var(--cor-destaque);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  border-color: #925b60;
+  background: #925b60;
+}
+
+.rodape {
+  padding: 1.25rem 1.5rem;
+  color: #79675c;
+  background: var(--cor-fundo);
+  text-align: center;
+}
+
+.rodape p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 850px) {
+  .grade-produtos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 8rem;
+  }
+
+  .topo {
+    min-height: 4.75rem;
+    padding-inline: 1rem;
+  }
+
+  .marca {
+    gap: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .marca img {
+    width: 6.2rem;
+    height: 6.2rem;
+  }
+
+  .botao-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.2rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(53, 23, 13, 0.2);
+    border-radius: 0.4rem;
+    color: var(--cor-chocolate);
+    background: rgba(255, 253, 250, 0.55);
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .navegacao {
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 0.75rem;
+    left: 0.75rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(53, 36, 29, 0.08);
+    border-radius: 0 0 0.7rem 0.7rem;
+    background: rgba(255, 253, 250, 0.96);
+    box-shadow: 0 12px 24px rgba(53, 36, 29, 0.1);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .navegacao.aberto {
+    display: flex;
+  }
+
+  .navegacao a {
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid var(--cor-linha);
+  }
+
+  .navegacao a:last-child {
+    border-bottom: 0;
+  }
+
+  .principal {
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 7rem 1.5rem 4rem;
+    background-image:
+      linear-gradient(90deg, rgba(35, 18, 12, 0.7), rgba(35, 18, 12, 0.24)),
+      linear-gradient(0deg, rgba(35, 18, 12, 0.22), rgba(35, 18, 12, 0.12)),
+      url("Imagens/WhatsApp%20Image%202026-10-17%20at%2008.37.48.jpeg");
+    background-position: center, center, 58% center;
+  }
+
+  .principal h1 {
+    max-width: 10ch;
+    font-size: clamp(2.75rem, 12vw, 4.5rem);
+  }
+
+  .principal p {
+    max-width: 31rem;
+  }
+
+  .produtos,
+  .contato {
+    width: min(calc(100% - 2rem), 42rem);
+  }
+
+  .contato {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .produtos {
+    padding-block: 4.25rem 4rem;
+  }
+
+  .introducao-produtos {
+    margin-bottom: 2.4rem;
+  }
+
+  .filtros-produtos {
+    gap: 0.5rem;
+    margin-top: -1.1rem;
+  }
+
+  .filtro-produto {
+    padding-inline: 0.85rem;
+  }
+
+  .grade-produtos {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .produto > img {
+    height: clamp(17rem, 82vw, 23rem);
+  }
+
+  .produto-conteudo {
+    padding: 1.25rem;
+  }
+
+  .contato {
+    padding-inline: 1rem;
+  }
+
+  .contato .botao {
+    width: min(100%, 25rem);
+    min-height: 3.25rem;
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    scroll-padding-top: 7.25rem;
+  }
+
+  .topo {
+    gap: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+
+  .marca {
+    gap: 0.45rem;
+    font-size: 0.9rem;
+  }
+
+  .marca img {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+
+  .principal {
+    padding-inline: 1rem;
+  }
+
+  .principal h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

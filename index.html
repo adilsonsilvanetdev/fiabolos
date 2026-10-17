@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça os bolos e doces da Fia Bolos & Doces, em São Paulo. Consulte opções e faça seu pedido pelo WhatsApp.">
+  <title>Fia Bolos &amp; Doces | Bolos para celebrar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topo" id="inicio">
+    <a class="marca" href="#inicio" aria-label="Fia Bolos & Doces, início">
+      <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2014.16.49.jpeg" alt="Logomarca Fia Bolos & Doces">
+      <span>Fia Bolos &amp; Doces</span>
+    </a>
+
+    <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+      Menu
+    </button>
+    <nav class="navegacao" id="menu-principal" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="principal" aria-labelledby="titulo-principal">
+      <h1 id="titulo-principal">Bolos feitos para celebrar</h1>
+      <p>Conheça algumas criações da Fia Bolos &amp; Doces e encontre uma opção para o seu momento especial.</p>
+    </section>
+
+    <section class="produtos" id="produtos" aria-labelledby="titulo-produtos">
+      <h2 id="titulo-produtos">Produtos em destaque</h2>
+      <p class="introducao-produtos">Veja algumas das nossas opções. Para consultar sabores, detalhes e disponibilidade, fale com a gente.</p>
+
+      <div class="filtros-produtos" role="group" aria-label="Filtrar produtos por tipo">
+        <button class="filtro-produto ativo" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="filtro-produto" type="button" data-filtro="bolos-caseiros" aria-pressed="false">Bolos caseiros</button>
+        <button class="filtro-produto" type="button" data-filtro="aniversarios" aria-pressed="false">Aniversários</button>
+        <button class="filtro-produto" type="button" data-filtro="bento-cake" aria-pressed="false">Bento cake</button>
+        <button class="filtro-produto" type="button" data-filtro="mini-bolos" aria-pressed="false">Mini bolos</button>
+      </div>
+      <p class="aviso-valores">Valores fictícios para demonstração.</p>
+      <p class="sem-produtos" role="status" aria-live="polite" hidden>Nenhum produto encontrado nesta categoria. Experimente outro filtro.</p>
+
+      <div class="grade-produtos">
+        <article class="produto" data-categoria="aniversarios" data-nome="Bolo de chocolate decorado" data-valor="120">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2008.37.48.jpeg" alt="Bolo redondo decorado com chocolate e brigadeiros" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Bolo de chocolate decorado</h3>
+            <p class="preco-produto">R$ 120,00</p>
+            <p>Uma opção caprichada para compartilhar em uma comemoração.</p>
+            <a class="link-pedido" data-produto="Bolo de chocolate decorado" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="aniversarios" data-nome="Bolo decorado com rosas" data-valor="150">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2008.43.49.jpeg" alt="Bolo branco decorado com rosas vermelhas" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Bolo decorado com rosas</h3>
+            <p class="preco-produto">R$ 150,00</p>
+            <p>Decoração floral para deixar a mesa da festa especial.</p>
+            <a class="link-pedido" data-produto="Bolo decorado com rosas" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="aniversarios" data-nome="Bolo floral" data-valor="145">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2008.43.46.jpeg" alt="Bolo branco com flores delicadas na decoração" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Bolo floral</h3>
+            <p class="preco-produto">R$ 145,00</p>
+            <p>Uma decoração delicada para diferentes ocasiões.</p>
+            <a class="link-pedido" data-produto="Bolo floral" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="outros" data-nome="Torta de maracujá" data-valor="65">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2009.06.40.jpeg" alt="Torta redonda com cobertura amarela e sementes de maracujá" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Torta de maracujá</h3>
+            <p class="preco-produto">R$ 65,00</p>
+            <p>Uma opção com cobertura de maracujá para servir à mesa.</p>
+            <a class="link-pedido" data-produto="Torta de maracujá" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="bolos-caseiros" data-nome="Bolo de chocolate com cobertura" data-valor="45">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2009.05.42.jpeg" alt="Bolo de chocolate em formato de anel com cobertura" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Bolo de chocolate com cobertura</h3>
+            <p class="preco-produto">R$ 45,00</p>
+            <p>Um bolo de chocolate simples para completar a comemoração.</p>
+            <a class="link-pedido" data-produto="Bolo de chocolate com cobertura" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="bolos-caseiros" data-nome="Rocambole de chocolate" data-valor="55">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2009.07.30.jpeg" alt="Bolo de chocolate decorado em formato de rocambole" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Rocambole de chocolate</h3>
+            <p class="preco-produto">R$ 55,00</p>
+            <p>Uma sobremesa de chocolate para servir em fatias.</p>
+            <a class="link-pedido" data-produto="Rocambole de chocolate" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="bento-cake" data-nome="Bento cake decorado" data-valor="38">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2008.54.17.jpeg" alt="Bento cake pequeno com decoração azul e branca" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Bento cake decorado</h3>
+            <p>Um mini bolo decorado para presentear ou comemorar.</p>
+            <p class="preco-produto">R$ 38,00</p>
+            <a class="link-pedido" data-produto="Bento cake decorado" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+
+        <article class="produto" data-categoria="mini-bolos" data-nome="Mini bolo com confeitos" data-valor="28">
+          <img src="Imagens/WhatsApp%20Image%202026-10-17%20at%2008.54.18.jpeg" alt="Mini bolo redondo coberto com confeitos coloridos" loading="lazy">
+          <div class="produto-conteudo">
+            <h3>Mini bolo com confeitos</h3>
+            <p>Um bolo pequeno e colorido para adoçar o dia.</p>
+            <p class="preco-produto">R$ 28,00</p>
+            <a class="link-pedido" data-produto="Mini bolo com confeitos" href="https://wa.me/5511994093043">Consultar pelo WhatsApp</a>
+            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043">Fazer Pedido</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contato" id="contato" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Vamos escolher seu bolo?</h2>
+      <p>Fale com a Fia Bolos &amp; Doces pelo WhatsApp para consultar opções e fazer seu pedido.</p>
+      <a class="botao" data-whatsapp-geral href="https://wa.me/5511994093043">Pedir pelo WhatsApp — (11) 99409-3043</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Fia Bolos &amp; Doces · São Paulo</p>
+  </footer>
+</body>
+</html>
