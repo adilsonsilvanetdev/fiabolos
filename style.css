@@ -223,13 +223,6 @@ a {
   outline-offset: 3px;
 }
 
-.aviso-valores {
-  margin: 0 0 2rem;
-  color: #8a7c72;
-  font-size: 0.82rem;
-  text-align: center;
-}
-
 .sem-produtos {
   margin: 1.5rem auto 2rem;
   padding: 1rem 1.25rem;
@@ -297,15 +290,6 @@ a {
   margin: 0 0 1.1rem;
   color: #77685e;
   font-size: 0.95rem;
-}
-
-.produto .preco-produto {
-  min-height: 0;
-  margin: 0.15rem 0 0.6rem;
-  color: var(--cor-chocolate);
-  font-size: 1.16rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
 }
 
 .link-pedido {

@@ -17,25 +17,17 @@ if (menuButton && menu) {
 
 const numeroWhatsApp = "5511994093043";
 
-// Mantém os links atuais de consulta com uma mensagem específica do produto.
-document.querySelectorAll("a[data-produto]").forEach((link) => {
-  const produto = link.dataset.produto;
-  const mensagem = `Olá! Gostaria de consultar opções e disponibilidade para: ${produto}.`;
-  link.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-});
-
-// Os novos botões incluem o nome e o valor ilustrativo no pedido via WhatsApp.
+// Os links dos cards enviam o nome e a descrição vistos no site para o WhatsApp.
 document.querySelectorAll(".produto").forEach((card) => {
-  const botaoPedido = card.querySelector("[data-fazer-pedido]");
-  if (!botaoPedido) return;
-
   const produto = card.dataset.nome;
-  const valor = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(Number(card.dataset.valor));
-  const mensagem = `Olá! Gostaria de fazer um pedido de ${produto}, no valor de ${valor}. Poderiam confirmar a disponibilidade?`;
-  botaoPedido.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  const descricao = card.querySelector(".produto-conteudo > p")?.textContent.trim();
+  const complemento = descricao ? ` — ${descricao}` : "";
+  const mensagem = `Olá! Vi no site o produto ${produto}${complemento} e gostaria de receber mais informações.`;
+  const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+  card.querySelectorAll("a[data-produto], a[data-fazer-pedido]").forEach((link) => {
+    link.href = linkWhatsApp;
+  });
 });
 
 // Filtros locais: não dependem de servidor ou banco de dados.
@@ -68,6 +60,6 @@ filtros.forEach((filtro) => {
 });
 
 document.querySelectorAll("a[data-whatsapp-geral]").forEach((link) => {
-  const mensagem = "Olá! Gostaria de conhecer as opções de bolos e doces da Fia Bolos & Doces.";
+  const mensagem = "Olá! Vi o site da Fia Bolos & Doces e gostaria de receber mais informações sobre os produtos.";
   link.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 });
