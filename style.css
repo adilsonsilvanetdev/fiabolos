@@ -96,7 +96,6 @@ a {
 }
 
 .navegacao a:focus-visible,
-.link-pedido:focus-visible,
 .botao-pedido:focus-visible,
 .botao-menu:focus-visible,
 .filtro-produto:focus-visible,
@@ -292,54 +291,34 @@ a {
   font-size: 0.95rem;
 }
 
-.link-pedido {
-  display: inline-flex;
-  min-height: 2.75rem;
-  align-items: center;
-  gap: 0.45rem;
-  padding-block: 0.35rem;
-  color: var(--cor-destaque);
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.link-pedido::after {
-  content: "↗";
-  font-size: 1rem;
-  transition: transform 180ms ease;
-}
-
-.link-pedido:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-}
-
-.link-pedido:hover::after {
-  transform: translate(2px, -2px);
-}
-
 .botao-pedido {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.55rem;
   min-height: 2.8rem;
   margin-top: 1rem;
   padding: 0.55rem 1rem;
-  border: 1px solid var(--cor-destaque);
+  border: 1px solid #075e54;
   border-radius: 0.45rem;
   color: #fffdfa;
-  background: var(--cor-destaque);
+  background: #075e54;
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
+.icone-whatsapp {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: 0 0 auto;
+}
+
 .botao-pedido:hover {
   transform: translateY(-2px);
-  border-color: #925b60;
-  background: #925b60;
+  border-color: #128c7e;
+  background: #128c7e;
 }
 
 .contato {

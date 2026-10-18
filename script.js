@@ -25,7 +25,7 @@ document.querySelectorAll(".produto").forEach((card) => {
   const mensagem = `Olá! Vi no site o produto ${produto}${complemento} e gostaria de receber mais informações.`;
   const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
-  card.querySelectorAll("a[data-produto], a[data-fazer-pedido]").forEach((link) => {
+  card.querySelectorAll("a[data-fazer-pedido]").forEach((link) => {
     link.href = linkWhatsApp;
   });
 });
