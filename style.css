@@ -77,6 +77,31 @@ a {
   gap: clamp(1.3rem, 3vw, 2.7rem);
 }
 
+.redes-sociais {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  white-space: nowrap;
+}
+
+.redes-sociais span {
+  color: var(--cor-chocolate);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.redes-sociais a {
+  color: #59463c;
+  font-size: 0.8rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.redes-sociais a:hover,
+.redes-sociais a:focus-visible {
+  color: var(--cor-destaque);
+}
+
 .navegacao a {
   position: relative;
   display: inline-flex;
@@ -449,6 +474,24 @@ a {
 
   .navegacao.aberto {
     display: flex;
+  }
+
+  .redes-sociais {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.45rem 0.25rem 0.7rem;
+    border-bottom: 1px solid var(--cor-linha);
+  }
+
+  .redes-sociais span {
+    padding: 0.15rem 0.25rem;
+  }
+
+  .redes-sociais a {
+    min-height: 2.5rem;
+    align-items: center;
+    padding: 0.55rem 0.25rem;
   }
 
   .navegacao a {
