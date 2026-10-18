@@ -155,7 +155,7 @@ a {
   background-image:
     linear-gradient(90deg, rgba(35, 18, 12, 0.78) 0%, rgba(35, 18, 12, 0.57) 38%, rgba(35, 18, 12, 0.12) 76%),
     linear-gradient(0deg, rgba(35, 18, 12, 0.22), rgba(35, 18, 12, 0.04)),
-    url("Imagens/WhatsApp%20Image%202026-10-17%20at%2008.37.48.jpeg");
+    url("Imagens/Bolo%20aniversario%20decorado.jpeg");
   background-position: center, center, center 56%;
   background-size: cover;
 }
@@ -513,7 +513,7 @@ a {
     background-image:
       linear-gradient(90deg, rgba(35, 18, 12, 0.7), rgba(35, 18, 12, 0.24)),
       linear-gradient(0deg, rgba(35, 18, 12, 0.22), rgba(35, 18, 12, 0.12)),
-      url("Imagens/WhatsApp%20Image%202026-10-17%20at%2008.37.48.jpeg");
+      url("Imagens/Bolo%20aniversario%20decorado.jpeg");
     background-position: center, center, 58% center;
   }
 
@@ -615,3 +615,4 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
