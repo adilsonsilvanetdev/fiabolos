@@ -244,6 +244,8 @@ a {
 }
 
 .produto {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid rgba(83, 56, 43, 0.08);
   border-radius: 0.85rem;
@@ -272,6 +274,9 @@ a {
 }
 
 .produto-conteudo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 1.5rem 1.55rem 1.7rem;
 }
 
@@ -293,13 +298,14 @@ a {
 
 .botao-pedido {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
   width: fit-content;
   max-width: 100%;
   min-height: 2.45rem;
-  margin-top: 1rem;
+  margin-top: auto;
   padding: 0.45rem 0.75rem;
   border: 1px solid #00c853;
   border-radius: 0.45rem;
