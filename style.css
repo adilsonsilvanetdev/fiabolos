@@ -292,33 +292,41 @@ a {
 }
 
 .botao-pedido {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  min-height: 2.8rem;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 2.45rem;
   margin-top: 1rem;
-  padding: 0.55rem 1rem;
-  border: 1px solid #075e54;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #00c853;
   border-radius: 0.45rem;
   color: #fffdfa;
-  background: #075e54;
-  font-size: 0.9rem;
+  background: #00c853;
+  font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
+  flex-wrap: nowrap;
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .icone-whatsapp {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   flex: 0 0 auto;
+}
+
+.botao-pedido span {
+  white-space: nowrap;
 }
 
 .botao-pedido:hover {
   transform: translateY(-2px);
-  border-color: #128c7e;
-  background: #128c7e;
+  border-color: #00b64a;
+  background: #00b64a;
 }
 
 .contato {
