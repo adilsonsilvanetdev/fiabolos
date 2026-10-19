@@ -55,7 +55,7 @@ a {
   gap: 0.8rem;
   color: var(--cor-chocolate);
   font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: 1.18rem;
+  font-size: 2.36rem;
   font-weight: 700;
   letter-spacing: 0.015em;
   text-decoration: none;
@@ -436,7 +436,7 @@ a {
 
   .marca {
     gap: 0.6rem;
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .marca img {
@@ -590,7 +590,7 @@ a {
 
   .marca {
     gap: 0.45rem;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 
   .marca img {
@@ -615,6 +615,7 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
 
 
 
