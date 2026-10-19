@@ -145,7 +145,7 @@ a {
   flex-direction: column;
   min-height: 100svh;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   margin: 0;
   padding: 8rem max(2rem, calc((100% - 1220px) / 2)) 5rem;
@@ -615,5 +615,6 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
 
 
