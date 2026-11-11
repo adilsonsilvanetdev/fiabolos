@@ -82,8 +82,43 @@ function atualizarCarrinho() {
 
     const texto = document.createElement("span");
     texto.className = "nome-item-carrinho";
-    texto.textContent = `${nome} × ${item.quantidade}`;
+    texto.textContent = nome;
     informacoes.append(texto);
+
+    const controlesQuantidade = document.createElement("div");
+    controlesQuantidade.className = "controles-quantidade";
+    controlesQuantidade.setAttribute("aria-label", `Quantidade de ${nome}`);
+
+    const diminuir = document.createElement("button");
+    diminuir.className = "botao-quantidade";
+    diminuir.type = "button";
+    diminuir.textContent = "−";
+    diminuir.setAttribute("aria-label", `Diminuir quantidade de ${nome}`);
+    diminuir.addEventListener("click", () => {
+      if (item.quantidade <= 1) {
+        carrinho.delete(nome);
+      } else {
+        item.quantidade -= 1;
+      }
+      atualizarCarrinho();
+    });
+
+    const quantidade = document.createElement("span");
+    quantidade.className = "quantidade-item-carrinho";
+    quantidade.textContent = String(item.quantidade);
+    quantidade.setAttribute("aria-live", "polite");
+
+    const aumentar = document.createElement("button");
+    aumentar.className = "botao-quantidade";
+    aumentar.type = "button";
+    aumentar.textContent = "+";
+    aumentar.setAttribute("aria-label", `Aumentar quantidade de ${nome}`);
+    aumentar.addEventListener("click", () => {
+      item.quantidade += 1;
+      atualizarCarrinho();
+    });
+
+    controlesQuantidade.append(diminuir, quantidade, aumentar);
 
     const remover = document.createElement("button");
     remover.className = "remover-item-carrinho";
@@ -95,7 +130,7 @@ function atualizarCarrinho() {
       atualizarCarrinho();
     });
 
-    linha.append(informacoes, remover);
+    linha.append(informacoes, controlesQuantidade, remover);
     listaCarrinho.append(linha);
   });
 

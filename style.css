@@ -516,6 +516,43 @@ a {
   overflow-wrap: anywhere;
 }
 
+.controles-quantidade {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.botao-quantidade {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid var(--cor-linha);
+  border-radius: 0.4rem;
+  color: var(--cor-texto);
+  background: #fffdfa;
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.botao-quantidade:hover {
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque);
+}
+
+.botao-quantidade:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.quantidade-item-carrinho {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
 .remover-item-carrinho {
   padding: 0.35rem 0.55rem;
   border: 0;
