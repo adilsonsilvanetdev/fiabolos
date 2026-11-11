@@ -17,19 +17,6 @@ if (menuButton && menu) {
 
 const numeroWhatsApp = "5511994093043";
 
-// Os links dos cards enviam o nome e a descrição vistos no site para o WhatsApp.
-document.querySelectorAll(".produto").forEach((card) => {
-  const produto = card.dataset.nome;
-  const descricao = card.querySelector(".produto-conteudo > p")?.textContent.trim();
-  const complemento = descricao ? ` — ${descricao}` : "";
-  const mensagem = `Olá! Vi no site o produto ${produto}${complemento} e gostaria de receber mais informações.`;
-  const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-  card.querySelectorAll("a[data-fazer-pedido]").forEach((link) => {
-    link.href = linkWhatsApp;
-  });
-});
-
 // Filtros locais: não dependem de servidor ou banco de dados.
 const filtros = document.querySelectorAll("[data-filtro]");
 const produtos = document.querySelectorAll(".produto");
@@ -59,7 +46,84 @@ filtros.forEach((filtro) => {
   });
 });
 
+// O carrinho existe apenas nesta página e prepara a mensagem do pedido.
+const carrinho = new Map();
+const listaCarrinho = document.querySelector("[data-itens-carrinho]");
+const contadorCarrinho = document.querySelector("[data-contador-carrinho]");
+const avisoCarrinhoVazio = document.querySelector("[data-carrinho-vazio]");
+const enviarCarrinho = document.querySelector("[data-enviar-carrinho]");
+
+function atualizarCarrinho() {
+  if (!listaCarrinho || !contadorCarrinho || !enviarCarrinho) return;
+
+  listaCarrinho.replaceChildren();
+  let quantidadeTotal = 0;
+
+  carrinho.forEach((item, nome) => {
+    quantidadeTotal += item.quantidade;
+    const linha = document.createElement("li");
+    linha.className = "item-carrinho";
+
+    const texto = document.createElement("span");
+    texto.className = "nome-item-carrinho";
+    texto.textContent = `${nome} × ${item.quantidade}`;
+
+    const remover = document.createElement("button");
+    remover.className = "remover-item-carrinho";
+    remover.type = "button";
+    remover.textContent = "Remover";
+    remover.setAttribute("aria-label", `Remover ${nome} do carrinho`);
+    remover.addEventListener("click", () => {
+      carrinho.delete(nome);
+      atualizarCarrinho();
+    });
+
+    linha.append(texto, remover);
+    listaCarrinho.append(linha);
+  });
+
+  contadorCarrinho.textContent = String(quantidadeTotal);
+  if (avisoCarrinhoVazio) avisoCarrinhoVazio.hidden = quantidadeTotal > 0;
+  enviarCarrinho.setAttribute("aria-disabled", String(quantidadeTotal === 0));
+  enviarCarrinho.tabIndex = quantidadeTotal === 0 ? -1 : 0;
+
+  if (quantidadeTotal === 0) {
+    enviarCarrinho.href = "https://wa.me/" + numeroWhatsApp;
+    return;
+  }
+
+  const linhasPedido = Array.from(carrinho, ([nome, item]) =>
+    `• ${nome} (quantidade: ${item.quantidade})`
+  );
+  const mensagem = `Olá! Gostaria de fazer um pedido com estes produtos:\n${linhasPedido.join("\n")}\n\nPodem me passar os detalhes e a disponibilidade?`;
+  enviarCarrinho.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+}
+
+document.querySelectorAll("[data-adicionar-carrinho]").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const card = botao.closest(".produto");
+    const nome = card?.dataset.nome;
+    if (!nome) return;
+
+    const existente = carrinho.get(nome);
+    carrinho.set(nome, { quantidade: existente ? existente.quantidade + 1 : 1 });
+    atualizarCarrinho();
+    botao.textContent = "Adicionado ao carrinho";
+    window.setTimeout(() => {
+      botao.textContent = "Adicionar ao carrinho";
+    }, 1400);
+  });
+});
+
 document.querySelectorAll("a[data-whatsapp-geral]").forEach((link) => {
   const mensagem = "Olá! Vi o site da Fia Bolos & Doces e gostaria de receber mais informações sobre os produtos.";
   link.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 });
+
+if (enviarCarrinho) {
+  enviarCarrinho.addEventListener("click", (evento) => {
+    if (carrinho.size === 0) evento.preventDefault();
+  });
+}
+
+atualizarCarrinho();

@@ -449,14 +449,14 @@ a {
   padding: 0.55rem 1rem;
   border-radius: 0.45rem;
   color: #fffdfa;
-  background: var(--cor-chocolate);
+  background: #25d366;
   font-weight: 700;
   text-decoration: none;
   transition: background 180ms ease, opacity 180ms ease;
 }
 
 .botao-enviar-carrinho:hover {
-  background: var(--cor-destaque);
+  background: #1da851;
 }
 
 .botao-enviar-carrinho[aria-disabled="true"] {
