@@ -127,7 +127,9 @@ a {
 }
 
 .navegacao a:focus-visible,
-.botao-pedido:focus-visible,
+.botao-adicionar-carrinho:focus-visible,
+.botao-enviar-carrinho:focus-visible,
+.remover-item-carrinho:focus-visible,
 .botao-menu:focus-visible,
 .filtro-produto:focus-visible,
 .botao:focus-visible {
@@ -327,43 +329,150 @@ a {
   font-size: 0.95rem;
 }
 
-.botao-pedido {
+.botao-adicionar-carrinho {
   display: inline-flex;
   align-self: flex-start;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
   width: fit-content;
   max-width: 100%;
-  min-height: 2.45rem;
+  min-height: 2.8rem;
   margin-top: auto;
-  padding: 0.45rem 0.75rem;
-  border: 1px solid #00c853;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--cor-destaque);
   border-radius: 0.45rem;
   color: #fffdfa;
-  background: #00c853;
+  background: var(--cor-destaque);
+  font: inherit;
   font-size: 0.85rem;
   font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  flex-wrap: nowrap;
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  cursor: pointer;
 }
 
-.icone-whatsapp {
-  width: 1.1rem;
-  height: 1.1rem;
-  flex: 0 0 auto;
-}
-
-.botao-pedido span {
-  white-space: nowrap;
-}
-
-.botao-pedido:hover {
+.botao-adicionar-carrinho:hover {
   transform: translateY(-2px);
-  border-color: #00b64a;
-  background: #00b64a;
+  border-color: var(--cor-chocolate);
+  background: var(--cor-chocolate);
+}
+
+.carrinho {
+  margin: 2rem 0 2.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--cor-linha);
+  border-radius: 0.8rem;
+  background: var(--cor-papel);
+  box-shadow: var(--sombra-card);
+}
+
+.carrinho-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sobretitulo-carrinho {
+  margin: 0 0 0.1rem;
+  color: var(--cor-destaque);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.carrinho h3 {
+  margin: 0;
+  color: var(--cor-chocolate);
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.55rem;
+  line-height: 1.25;
+}
+
+.contador-carrinho {
+  display: inline-grid;
+  min-width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  padding-inline: 0.35rem;
+  border-radius: 50%;
+  color: #fffdfa;
+  background: var(--cor-destaque);
+  font: 700 0.85rem/1 Arial, sans-serif;
+  vertical-align: 0.12rem;
+}
+
+.carrinho-vazio {
+  margin: 0;
+  color: #77685e;
+  font-size: 0.92rem;
+}
+
+.itens-carrinho {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--cor-linha);
+}
+
+.nome-item-carrinho {
+  font-weight: 600;
+}
+
+.remover-item-carrinho {
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  border-radius: 0.35rem;
+  color: var(--cor-destaque);
+  background: transparent;
+  font: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.botao-enviar-carrinho {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.55rem 1rem;
+  border-radius: 0.45rem;
+  color: #fffdfa;
+  background: var(--cor-chocolate);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, opacity 180ms ease;
+}
+
+.botao-enviar-carrinho:hover {
+  background: var(--cor-destaque);
+}
+
+.botao-enviar-carrinho[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .carrinho-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .botao-enviar-carrinho {
+    width: 100%;
+  }
 }
 
 .contato {

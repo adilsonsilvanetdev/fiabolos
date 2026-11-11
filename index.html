@@ -6,7 +6,7 @@
   <meta name="description" content="Conheça os bolos e doces da Fia Bolos & Doces, em São Paulo. Consulte opções e faça seu pedido pelo WhatsApp.">
   <title>Fia Bolos &amp; Doces | Bolos para celebrar</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js?v=3" defer></script>
+  <script src="script.js?v=4" defer></script>
 </head>
 <body>
   <header class="topo" id="inicio">
@@ -69,13 +69,25 @@
       </div>
       <p class="sem-produtos" role="status" aria-live="polite" hidden>Nenhum produto encontrado nesta categoria. Experimente outro filtro.</p>
 
+      <section class="carrinho" aria-labelledby="titulo-carrinho">
+        <div class="carrinho-cabecalho">
+          <div>
+            <p class="sobretitulo-carrinho">Seu pedido</p>
+            <h3 id="titulo-carrinho">Carrinho <span class="contador-carrinho" data-contador-carrinho aria-live="polite">0</span></h3>
+          </div>
+          <p class="carrinho-vazio" data-carrinho-vazio>Adicione produtos para montar seu pedido.</p>
+        </div>
+        <ul class="itens-carrinho" data-itens-carrinho aria-label="Produtos selecionados"></ul>
+        <a class="botao-enviar-carrinho" data-enviar-carrinho href="https://wa.me/5511994093043" aria-disabled="true" tabindex="-1">Enviar pedido ao WhatsApp</a>
+      </section>
+
       <div class="grade-produtos">
         <article class="produto" data-categoria="aniversarios" data-nome="Bolo aniversario decorado">
           <img src="Imagens/Bolo%20aniversario%20decorado.jpeg" alt="Bolo branco decorado com rosas vermelhas" loading="lazy">
           <div class="produto-conteudo">
             <h3>Bolo aniversario decorado</h3>
             <p>Decoração floral para compor uma mesa de comemoração.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="aniversarios" data-nome="Bolo aniversario retangular">
@@ -83,7 +95,7 @@
           <div class="produto-conteudo">
             <h3>Bolo aniversario retangular</h3>
             <p>Bolo retangular com acabamento decorativo em azul e branco.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="aniversarios" data-nome="Bolo de Andar">
@@ -91,7 +103,7 @@
           <div class="produto-conteudo">
             <h3>Bolo de Andar</h3>
             <p>Bolo de dois andares com decoração temática em tons de rosa.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="aniversarios" data-nome="Bolo redondo comemoracoes">
@@ -99,7 +111,7 @@
           <div class="produto-conteudo">
             <h3>Bolo redondo comemoracoes</h3>
             <p>Decoração floral delicada para uma ocasião especial.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="aniversarios" data-nome="Bolo tematico menina">
@@ -107,7 +119,7 @@
           <div class="produto-conteudo">
             <h3>Bolo tematico menina</h3>
             <p>Bolo com decoração temática em vermelho.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="aniversarios" data-nome="Bolo tematico menino">
@@ -115,7 +127,7 @@
           <div class="produto-conteudo">
             <h3>Bolo tematico menino</h3>
             <p>Bolo com decoração temática em preto e branco.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="bolos-caseiros" data-nome="Bolo caseiro com caldas">
@@ -123,7 +135,7 @@
           <div class="produto-conteudo">
             <h3>Bolo caseiro com caldas</h3>
             <p>Bolo caseiro de chocolate com calda por cima.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="bolos-caseiros" data-nome="Bolo caseiro tradicional">
@@ -131,7 +143,7 @@
           <div class="produto-conteudo">
             <h3>Bolo caseiro tradicional</h3>
             <p>Bolo caseiro tradicional para servir em fatias.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="bolos-caseiros" data-nome="Bolo de reis">
@@ -139,7 +151,7 @@
           <div class="produto-conteudo">
             <h3>Bolo de reis</h3>
             <p>Bolo de reis decorado com cobertura e frutas.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="bolos-caseiros" data-nome="Bolo rocambole chocolate">
@@ -147,7 +159,7 @@
           <div class="produto-conteudo">
             <h3>Bolo rocambole chocolate</h3>
             <p>Rocambole de chocolate servido em fatias.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="bento-cake" data-nome="Bento cake">
@@ -155,7 +167,7 @@
           <div class="produto-conteudo">
             <h3>Bento cake</h3>
             <p>Bento cake pequeno com decoração de confeitos.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
 
@@ -164,7 +176,7 @@
           <div class="produto-conteudo">
             <h3>Bento cake frutas</h3>
             <p>Bento cake com decoração de frutas.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="mini-bolos" data-nome="Mini bolo">
@@ -172,7 +184,7 @@
           <div class="produto-conteudo">
             <h3>Mini bolo</h3>
             <p>Mini bolo com cobertura rosa e detalhes de chocolate.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
 
@@ -181,7 +193,7 @@
           <div class="produto-conteudo">
             <h3>Mini bolo caseirinho</h3>
             <p>Bolo caseirinho em tamanho mini.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="mini-bolos" data-nome="Mini bolo torta de limao">
@@ -189,7 +201,7 @@
           <div class="produto-conteudo">
             <h3>Mini bolo torta de limao</h3>
             <p>Porções individuais de torta com cobertura de limão.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="doces" data-nome="Doce manjar branco de coco">
@@ -197,7 +209,7 @@
           <div class="produto-conteudo">
             <h3>Doce manjar branco de coco</h3>
             <p>Manjar branco servido com calda de ameixa.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="doces" data-nome="Doce mosaico de gelatina">
@@ -205,7 +217,7 @@
           <div class="produto-conteudo">
             <h3>Doce mosaico de gelatina</h3>
             <p>Sobremesa cremosa com pedaços coloridos de gelatina.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="doces" data-nome="Doce pudim leite condensado">
@@ -213,7 +225,7 @@
           <div class="produto-conteudo">
             <h3>Doce pudim leite condensado</h3>
             <p>Pudim de leite condensado com calda de caramelo.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="doces" data-nome="Doce torta holandesa">
@@ -221,7 +233,7 @@
           <div class="produto-conteudo">
             <h3>Doce torta holandesa</h3>
             <p>Torta de chocolate decorada com biscoitos.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
         <article class="produto" data-categoria="doces" data-nome="Doce torta de macacuja">
@@ -229,7 +241,7 @@
           <div class="produto-conteudo">
             <h3>Doce torta de macacuja</h3>
             <p>Torta com cobertura de maracujá.</p>
-            <a class="botao-pedido" data-fazer-pedido href="https://wa.me/5511994093043"><svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.87 11.87 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.06 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.4zM12.08 21.78c-1.8 0-3.57-.49-5.11-1.42l-.37-.22-3.73.98.99-3.64-.24-.37a9.8 9.8 0 1 1 8.46 4.67z"/><path fill="currentColor" d="M17.58 14.32c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg><span>Pedir via WhatsApp</span></a>
+            <button class="botao-adicionar-carrinho" type="button" data-adicionar-carrinho>Adicionar ao carrinho</button>
           </div>
         </article>
       </div>
