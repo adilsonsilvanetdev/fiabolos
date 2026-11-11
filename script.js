@@ -68,9 +68,22 @@ function atualizarCarrinho() {
     const linha = document.createElement("li");
     linha.className = "item-carrinho";
 
+    const informacoes = document.createElement("div");
+    informacoes.className = "item-carrinho-info";
+
+    if (item.foto) {
+      const foto = document.createElement("img");
+      foto.className = "miniatura-carrinho";
+      foto.src = item.foto;
+      foto.alt = "";
+      foto.setAttribute("aria-hidden", "true");
+      informacoes.append(foto);
+    }
+
     const texto = document.createElement("span");
     texto.className = "nome-item-carrinho";
     texto.textContent = `${nome} × ${item.quantidade}`;
+    informacoes.append(texto);
 
     const remover = document.createElement("button");
     remover.className = "remover-item-carrinho";
@@ -82,7 +95,7 @@ function atualizarCarrinho() {
       atualizarCarrinho();
     });
 
-    linha.append(texto, remover);
+    linha.append(informacoes, remover);
     listaCarrinho.append(linha);
   });
 
@@ -124,8 +137,12 @@ document.querySelectorAll("[data-adicionar-carrinho]").forEach((botao) => {
     const nome = card?.dataset.nome;
     if (!nome) return;
 
+    const foto = card.querySelector("img")?.getAttribute("src");
     const existente = carrinho.get(nome);
-    carrinho.set(nome, { quantidade: existente ? existente.quantidade + 1 : 1 });
+    carrinho.set(nome, {
+      quantidade: existente ? existente.quantidade + 1 : 1,
+      foto: existente?.foto || foto,
+    });
     atualizarCarrinho();
     botao.textContent = "Adicionado ao carrinho";
     window.setTimeout(() => {

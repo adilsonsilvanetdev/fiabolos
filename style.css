@@ -495,6 +495,27 @@ a {
   font-weight: 600;
 }
 
+.item-carrinho-info {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.miniatura-carrinho {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 auto;
+  border-radius: 0.45rem;
+  background: #eee8e2;
+  object-fit: cover;
+}
+
+.nome-item-carrinho {
+  overflow-wrap: anywhere;
+}
+
 .remover-item-carrinho {
   padding: 0.35rem 0.55rem;
   border: 0;
@@ -591,6 +612,16 @@ a {
   transform: translateY(-2px);
   border-color: #925b60;
   background: #925b60;
+}
+
+.botao-whatsapp {
+  border-color: #25d366;
+  background: #25d366;
+}
+
+.botao-whatsapp:hover {
+  border-color: #1da851;
+  background: #1da851;
 }
 
 .rodape {
