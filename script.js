@@ -1,5 +1,8 @@
 const menuButton = document.querySelector(".botao-menu");
 const menu = document.querySelector("#menu-principal");
+const janelaCarrinho = document.querySelector("[data-janela-carrinho]");
+const botaoAbrirCarrinho = document.querySelector("[data-abrir-carrinho]");
+const botaoFecharCarrinho = document.querySelector("[data-fechar-carrinho]");
 
 if (menuButton && menu) {
   menuButton.addEventListener("click", () => {
@@ -7,8 +10,8 @@ if (menuButton && menu) {
     menuButton.setAttribute("aria-expanded", String(aberto));
   });
 
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+  menu.querySelectorAll("a, [data-abrir-carrinho]").forEach((item) => {
+    item.addEventListener("click", () => {
       menu.classList.remove("aberto");
       menuButton.setAttribute("aria-expanded", "false");
     });
@@ -50,6 +53,7 @@ filtros.forEach((filtro) => {
 const carrinho = new Map();
 const listaCarrinho = document.querySelector("[data-itens-carrinho]");
 const contadorCarrinho = document.querySelector("[data-contador-carrinho]");
+const contadorMenuCarrinho = document.querySelector("[data-contador-menu-carrinho]");
 const avisoCarrinhoVazio = document.querySelector("[data-carrinho-vazio]");
 const enviarCarrinho = document.querySelector("[data-enviar-carrinho]");
 
@@ -83,6 +87,10 @@ function atualizarCarrinho() {
   });
 
   contadorCarrinho.textContent = String(quantidadeTotal);
+  if (contadorMenuCarrinho) contadorMenuCarrinho.textContent = String(quantidadeTotal);
+  if (botaoAbrirCarrinho) {
+    botaoAbrirCarrinho.setAttribute("aria-label", `Abrir carrinho, ${quantidadeTotal} ${quantidadeTotal === 1 ? "item" : "itens"}`);
+  }
   if (avisoCarrinhoVazio) avisoCarrinhoVazio.hidden = quantidadeTotal > 0;
   enviarCarrinho.setAttribute("aria-disabled", String(quantidadeTotal === 0));
   enviarCarrinho.tabIndex = quantidadeTotal === 0 ? -1 : 0;
@@ -97,6 +105,17 @@ function atualizarCarrinho() {
   );
   const mensagem = `Olá! Gostaria de fazer um pedido com estes produtos:\n${linhasPedido.join("\n")}\n\nPodem me passar os detalhes e a disponibilidade?`;
   enviarCarrinho.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+}
+
+if (janelaCarrinho && botaoAbrirCarrinho) {
+  botaoAbrirCarrinho.addEventListener("click", () => janelaCarrinho.showModal());
+}
+
+if (janelaCarrinho && botaoFecharCarrinho) {
+  botaoFecharCarrinho.addEventListener("click", () => janelaCarrinho.close());
+  janelaCarrinho.addEventListener("click", (evento) => {
+    if (evento.target === janelaCarrinho) janelaCarrinho.close();
+  });
 }
 
 document.querySelectorAll("[data-adicionar-carrinho]").forEach((botao) => {
